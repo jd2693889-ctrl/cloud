@@ -1,8 +1,5 @@
 (function () {
 
-  /* =========================
-     EMAIL SECTION
-  ========================= */
 
   let emailLoaded = false;
 
