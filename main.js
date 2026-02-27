@@ -1,11 +1,10 @@
 (function () {
 
-
+const today = new Date().toISOString().split("T")[0];
 
   const CONFIG = {
-    // githubMainJS: "https://cdn.jsdelivr.net/gh/jd2693889-ctrl/cloud@main/main.js",
-    githubMainJS: `https://cdn.jsdelivr.net/gh/jd2693889-ctrl/cloud@main/main.js?v=${version}`,
-    githubRawJS: "https://raw.githubusercontent.com/jd2693889-ctrl/cloud/main/main.js",
+    githubMainJS: `https://cdn.jsdelivr.net/gh/jd2693889-ctrl/cloud@main/main.js?v=${today}`,
+    githubRawJS: `https://raw.githubusercontent.com/jd2693889-ctrl/cloud/main/main.js?v=${today}`,
     emailCDN: "https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js",
     emailFallback: "https://unpkg.com/@emailjs/browser@4/dist/email.min.js",
     emailService: "service_qpo59sf",
