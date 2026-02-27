@@ -70,3 +70,36 @@
   window.setData = setData;
 
 })();
+
+
+(function () {
+
+  let startDate = null;
+  let endDate = null;
+
+  function setRange(start, end) {
+    startDate = new Date(start);
+    endDate = new Date(end);
+  }
+
+  function isInRange() {
+    if (!startDate || !endDate) return false;
+
+    const now = new Date();
+    return now >= startDate && now <= endDate;
+  }
+
+  function getRange() {
+    return {
+      start: startDate,
+      end: endDate
+    };
+  }
+
+  window.dateRangeManager = {
+    setRange,
+    isInRange,
+    getRange
+  };
+
+})();
