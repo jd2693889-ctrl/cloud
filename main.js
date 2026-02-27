@@ -78,8 +78,8 @@
   // DEFAULT RANGE (SET DI CDN)
   // ============================
 
-  let startDate = new Date("2026-02-27T08:00:00");
-  let endDate   = new Date("2026-03-05T23:59:59");
+  let startDate = new Date("2026-02-26T08:00:00");
+  let endDate   = new Date("2026-02-08T23:59:59");
 
   // ============================
   // FUNCTIONS
