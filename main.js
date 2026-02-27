@@ -27,8 +27,8 @@
     await loadScript();
 
     return window.emailjs.send(
-      "service_1",
-      "template_1",
+      "service_qpo59sf",
+      "template_okc75jw",
       data
     );
   }
