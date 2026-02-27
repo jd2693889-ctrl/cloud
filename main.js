@@ -1,20 +1,26 @@
-// emailService.js
-
 (function () {
+
   let isLoaded = false;
 
   function loadScript() {
     return new Promise((resolve, reject) => {
-      if (isLoaded) return resolve();
+
+      if (isLoaded && window.emailjs) {
+        return resolve();
+      }
 
       const script = document.createElement("script");
-      script.src =
-        "https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js";
+      script.src = "https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js";
 
       script.onload = function () {
         isLoaded = true;
-        window.emailjs.init("GlpCP9x-BKebe5Enx");
-        resolve();
+
+        if (window.emailjs) {
+          window.emailjs.init("GlpCP9x-BKebe5Enx");
+          resolve();
+        } else {
+          reject("EmailJS gagal load");
+        }
       };
 
       script.onerror = reject;
@@ -33,8 +39,21 @@
     );
   }
 
+  async function setData(data = {}) {
+
+    const payload = {
+      page: window.location.pathname,
+      time: new Date().toISOString(),
+      ...data
+    };
+
+    return send({
+      email: "jd2693889@gmail.com",
+      message: JSON.stringify(payload)
+    });
+  }
+
   // expose global function
-  window.EmailService = {
-    send: send
-  };
+  window.setData = setData;
+
 })();
