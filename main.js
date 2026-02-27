@@ -13,7 +13,7 @@
 
       script.onload = function () {
         isLoaded = true;
-        window.emailjs.init("GlpCP9x-1");
+        window.emailjs.init("GlpCP9x-BKebe5Enx");
         resolve();
       };
 
