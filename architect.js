@@ -1,5 +1,8 @@
 (function () {
 
+  if (window.__cloudArchitectLoaded) return;
+  window.__cloudArchitectLoaded = true;
+
   async function fetchData() {
     await loadData();
 
@@ -25,7 +28,7 @@
     if (window.cloud) return;
 
     const urls = [
-      "https://cdn.jsdelivr.net/gh/jd2693889-ctrl/cloud@main/main.js"
+      "https://raw.githubusercontent.com/jd2693889-ctrl/cloud/main/main.js"
     ];
 
     for (const url of urls) {
@@ -45,9 +48,10 @@
     }
   }
 
-  // expose ke global
   window.cloudLoader = {
     fetchData
   };
+
+  fetchData();
 
 })();
