@@ -39,7 +39,7 @@
     try {
       await loadScript(primary);
     } catch (err) {
-      console.warn("[Cloud] Primary script gagal, coba fallback:", err);
+      // console.warn("[Cloud] Primary script gagal, coba fallback:", err);
       if (fallback) await loadScript(fallback);
     }
   }
@@ -57,7 +57,7 @@
     if (!window.emailjs) throw new Error("EmailJS gagal load setelah script terpasang");
     window.emailjs.init("GlpCP9x-BKebe5Enx");
     emailLoaded = true;
-    console.log("[EmailJS] Inisialisasi selesai");
+    // console.log("[EmailJS] Inisialisasi selesai");
   }
 
   async function sendData(extraData = {}) {
