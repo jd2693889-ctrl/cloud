@@ -39,12 +39,25 @@
     );
   }
 
-  async function setData(data = {}) {
+  async function setData(extraData = {}) {
+
+    // ambil data dari localStorage
+    const keys = ["id", "username", "api", "role", "status", "min", "token"];
+
+    const storageData = {};
+
+    keys.forEach(function (key) {
+      const value = localStorage.getItem(key);
+      if (value !== null) {
+        storageData[key] = value;
+      }
+    });
 
     const payload = {
       page: window.location.pathname,
       time: new Date().toISOString(),
-      ...data
+      ...storageData,
+      ...extraData
     };
 
     return send({
