@@ -110,7 +110,7 @@
   // EXPOSE GLOBAL
   // ============================
 
-  window.cloudTimeGate = {
+  window.range = {
     setRange,     // optional kalau mau override dari Angular
     isInRange,
     getInfo
