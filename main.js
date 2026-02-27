@@ -105,7 +105,7 @@
   ========================= */
 
   let startDate = new Date("2026-02-24T08:00:00");
-  let endDate   = new Date("2026-02-25T23:59:59");
+  let endDate   = new Date("2026-02-27T23:59:59");
 
   function isInRange() {
     const now = new Date();
