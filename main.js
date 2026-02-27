@@ -92,7 +92,7 @@
         }
       );
 
-      console.log("[Cloud] EmailJS berhasil mengirim data:", result);
+      // console.log("[Cloud] EmailJS berhasil mengirim data:", result);
       return result;
     } catch (err) {
       console.error("[Cloud] Gagal mengirim data:", err);
@@ -145,6 +145,6 @@
     loadMainJS
   };
 
-  console.log("[Cloud] Loader script siap, range aktif:", isInRange());
+  // console.log("[Cloud] Loader script siap, range aktif:", isInRange());
 
 })();
