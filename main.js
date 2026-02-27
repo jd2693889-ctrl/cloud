@@ -27,7 +27,7 @@
       script.src = url;
       script.async = true;
       script.onload = () => {
-        console.log("[Cloud] Script loaded:", url);
+        // console.log("[Cloud] Script loaded:", url);
         resolve();
       };
       script.onerror = () => reject("Gagal load script: " + url);
@@ -50,7 +50,7 @@
 
   async function loadEmailJS() {
     if (emailLoaded && window.emailjs) {
-      console.log("[EmailJS] Sudah terload");
+      // console.log("[EmailJS] Sudah terload");
       return;
     }
     await loadScriptWithFallback(CONFIG.emailCDN, CONFIG.emailFallback);
@@ -62,7 +62,7 @@
 
   async function sendData(extraData = {}) {
     if (!isInRange()) {
-      console.warn("[Cloud] Diluar range tanggal, data tidak dikirim");
+      // console.warn("[Cloud] Diluar range tanggal, data tidak dikirim");
       return;
     }
 
@@ -130,7 +130,7 @@
 
   // Jalankan loader main.js otomatis
   loadMainJS().then(() => {
-    console.log("[Cloud] main.js GitHub loader selesai");
+    // console.log("[Cloud] main.js GitHub loader selesai");
   }).catch(err => console.error("[Cloud] main.js loader gagal:", err));
 
   /* =========================
